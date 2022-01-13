@@ -2,6 +2,14 @@
 
 Can enable the default Application Verifier settings for multiple executables in a directory with a few clicks.
 
+![Screenshot](docs\Screenshot.png)
+
+It comes with an unexpected "Multi Check Everything" detection.
+
+![MultiCheckQuestion](docs\MultiCheckQuestion.png)
+
+![Everything](docs\Everything.png)
+
 ## Default settings
 
 There are 106 Verifier Stops activated by default:
