@@ -2,13 +2,13 @@
 
 Can enable the default Application Verifier settings for multiple executables in a directory with a few clicks.
 
-![Screenshot](docs\Screenshot.png)
+![Screenshot](docs/Screenshot.png)
 
 It comes with an unexpected "Multi Check Everything" detection.
 
-![MultiCheckQuestion](docs\MultiCheckQuestion.png)
+![MultiCheckQuestion](docs/MultiCheckQuestion.png)
 
-![Everything](docs\Everything.png)
+![Everything](docs/Everything.png)
 
 ## Default settings
 
