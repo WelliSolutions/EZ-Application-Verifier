@@ -1,6 +1,6 @@
 # EZ Application Verifier
 
-Can enable the default Application Verifier settings for multiple executables in a directory with a few clicks.
+Enables the default Application Verifier settings and Windows Error Reporting [LocalDumps](https://docs.microsoft.com/en-us/windows/win32/wer/collecting-user-mode-dumps) for multiple executables in a directory with a few clicks.
 
 ![Screenshot](docs/Screenshot.png)
 
