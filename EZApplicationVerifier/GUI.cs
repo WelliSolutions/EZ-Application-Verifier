@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Diagnostics;
 using System.Drawing;
 using System.IO;
+using System.Linq;
 using System.Windows.Forms;
 using ThomasWeller.EasyAppVerif.Properties;
 
@@ -37,7 +38,9 @@ namespace ThomasWeller.EasyAppVerif
             try
             {
                 var exes = dir.GetFiles("*.exe", SearchOption.AllDirectories);
-                return exes.DistinctBy(n => n.Name);
+                var distinctBy = exes.DistinctBy(n => n.Name).ToList();
+                distinctBy.Sort((n, m) => string.Compare(n.Name, m.Name, StringComparison.OrdinalIgnoreCase));
+                return distinctBy;
             }
             catch (DirectoryNotFoundException)
             {
