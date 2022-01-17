@@ -114,10 +114,12 @@ namespace ThomasWeller.EasyAppVerif
 
         private void btnAppVerif_Click(object sender, EventArgs e)
         {
-            if (!CreateDirectory(txtCrashDumps.Text)) return;
+            if (chkCrashDumps.Checked)
+            {
+                if (!CreateDirectory(txtCrashDumps.Text)) return;
+                ProcessCheckedList(item => new LocalDumps(item, txtCrashDumps.Text).Enable(), item => new LocalDumps(item, txtCrashDumps.Text).Disable());
+            }
             ProcessCheckedList(item => new ApplicationVerifierDefault(item).Enable(), item => new ApplicationVerifierDefault(item).Disable());
-            ProcessCheckedList(item => new LocalDumps(item, txtCrashDumps.Text).Enable(), item => new LocalDumps(item, txtCrashDumps.Text).Disable());
-
         }
 
         private bool CreateDirectory(string path)
