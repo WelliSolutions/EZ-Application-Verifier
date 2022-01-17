@@ -81,7 +81,8 @@ namespace ThomasWeller.EasyAppVerif
             // 
             // btnFindApps
             // 
-            this.btnFindApps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnFindApps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnFindApps.Location = new System.Drawing.Point(12, 52);
             this.btnFindApps.Name = "btnFindApps";
             this.btnFindApps.Size = new System.Drawing.Size(404, 23);
@@ -105,7 +106,8 @@ namespace ThomasWeller.EasyAppVerif
             // 
             // btnAppVerif
             // 
-            this.btnAppVerif.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAppVerif.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.btnAppVerif.Location = new System.Drawing.Point(12, 376);
             this.btnAppVerif.Name = "btnAppVerif";
             this.btnAppVerif.Size = new System.Drawing.Size(404, 62);
@@ -147,6 +149,7 @@ namespace ThomasWeller.EasyAppVerif
             // 
             // chkCrashDumps
             // 
+            this.chkCrashDumps.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.chkCrashDumps.AutoSize = true;
             this.chkCrashDumps.Checked = true;
             this.chkCrashDumps.CheckState = System.Windows.Forms.CheckState.Checked;
@@ -159,7 +162,7 @@ namespace ThomasWeller.EasyAppVerif
             // 
             // txtCrashDumps
             // 
-            this.txtCrashDumps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            this.txtCrashDumps.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.txtCrashDumps.Location = new System.Drawing.Point(178, 348);
             this.txtCrashDumps.Name = "txtCrashDumps";
@@ -170,7 +173,7 @@ namespace ThomasWeller.EasyAppVerif
             // 
             // btnBrowseCrashDump
             // 
-            this.btnBrowseCrashDump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnBrowseCrashDump.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.btnBrowseCrashDump.Location = new System.Drawing.Point(341, 346);
             this.btnBrowseCrashDump.Name = "btnBrowseCrashDump";
             this.btnBrowseCrashDump.Size = new System.Drawing.Size(75, 23);
@@ -181,6 +184,7 @@ namespace ThomasWeller.EasyAppVerif
             // 
             // lblCrashDumpInfo
             // 
+            this.lblCrashDumpInfo.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
             this.lblCrashDumpInfo.AutoSize = true;
             this.lblCrashDumpInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCrashDumpInfo.ForeColor = System.Drawing.SystemColors.Highlight;
