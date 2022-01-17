@@ -44,6 +44,7 @@ namespace ThomasWeller.EasyAppVerif
             this.txtCrashDumps = new System.Windows.Forms.TextBox();
             this.btnBrowseCrashDump = new System.Windows.Forms.Button();
             this.lblCrashDumpInfo = new System.Windows.Forms.Label();
+            this.lblAppVerifDefaultsInfo = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.picEverything)).BeginInit();
             this.SuspendLayout();
             // 
@@ -52,9 +53,9 @@ namespace ThomasWeller.EasyAppVerif
             this.lblDirectory.AutoSize = true;
             this.lblDirectory.Location = new System.Drawing.Point(9, 9);
             this.lblDirectory.Name = "lblDirectory";
-            this.lblDirectory.Size = new System.Drawing.Size(201, 13);
+            this.lblDirectory.Size = new System.Drawing.Size(260, 13);
             this.lblDirectory.TabIndex = 0;
-            this.lblDirectory.Text = "&Directory to enable Application Verifier for";
+            this.lblDirectory.Text = "&Directory to enable Application Verifier default settings";
             // 
             // txtDirectory
             // 
@@ -190,11 +191,24 @@ namespace ThomasWeller.EasyAppVerif
             this.lblCrashDumpInfo.Text = "?";
             this.lblCrashDumpInfo.Click += new System.EventHandler(this.lblCrashDumpInfo_Click);
             // 
+            // lblAppVerifDefaultsInfo
+            // 
+            this.lblAppVerifDefaultsInfo.AutoSize = true;
+            this.lblAppVerifDefaultsInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblAppVerifDefaultsInfo.ForeColor = System.Drawing.SystemColors.Highlight;
+            this.lblAppVerifDefaultsInfo.Location = new System.Drawing.Point(275, 9);
+            this.lblAppVerifDefaultsInfo.Name = "lblAppVerifDefaultsInfo";
+            this.lblAppVerifDefaultsInfo.Size = new System.Drawing.Size(13, 13);
+            this.lblAppVerifDefaultsInfo.TabIndex = 10;
+            this.lblAppVerifDefaultsInfo.Text = "?";
+            this.lblAppVerifDefaultsInfo.Click += new System.EventHandler(this.lblAppVerifDefaultsInfo_Click);
+            // 
             // GUI
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(428, 450);
+            this.Controls.Add(this.lblAppVerifDefaultsInfo);
             this.Controls.Add(this.lblCrashDumpInfo);
             this.Controls.Add(this.btnBrowseCrashDump);
             this.Controls.Add(this.txtCrashDumps);
@@ -232,6 +246,7 @@ namespace ThomasWeller.EasyAppVerif
         private System.Windows.Forms.TextBox txtCrashDumps;
         private System.Windows.Forms.Button btnBrowseCrashDump;
         private System.Windows.Forms.Label lblCrashDumpInfo;
+        private System.Windows.Forms.Label lblAppVerifDefaultsInfo;
     }
 }
 

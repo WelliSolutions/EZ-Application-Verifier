@@ -221,5 +221,10 @@ namespace ThomasWeller.EasyAppVerif
         {
             txtCrashDumps.ForeColor = SystemColors.WindowText;
         }
+
+        private void lblAppVerifDefaultsInfo_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://github.com/WelliSolutions/EZ-Application-Verifier#default-settings");
+        }
     }
 }
