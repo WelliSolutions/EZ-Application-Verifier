@@ -4,6 +4,7 @@ using System.Diagnostics;
 using System.Drawing;
 using System.IO;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Windows.Forms;
 using ThomasWeller.EasyAppVerif.Properties;
 
@@ -113,8 +114,48 @@ namespace ThomasWeller.EasyAppVerif
 
         private void btnAppVerif_Click(object sender, EventArgs e)
         {
+            if (!CreateDirectory(txtCrashDumps.Text)) return;
             ProcessCheckedList(item => new ApplicationVerifierDefault(item).Enable(), item => new ApplicationVerifierDefault(item).Disable());
             ProcessCheckedList(item => new LocalDumps(item, txtCrashDumps.Text).Enable(), item => new LocalDumps(item, txtCrashDumps.Text).Disable());
+
+        }
+
+        private bool CreateDirectory(string path)
+        {
+            try
+            {
+                if (!Directory.Exists(path))
+                {
+                    txtCrashDumps.ForeColor = Color.Red;
+                    Directory.CreateDirectory(path);
+                    txtCrashDumps.ForeColor = SystemColors.WindowText;
+                }
+                return true;
+            }
+            catch (UnauthorizedAccessException)
+            {
+                return false;
+            }
+            catch (ArgumentException)
+            {
+                return false;
+            }
+            catch (DirectoryNotFoundException)
+            {
+                return false;
+            }
+            catch (PathTooLongException)
+            {
+                return false;
+            }
+            catch (NotSupportedException)
+            {
+                return false;
+            }
+            catch (IOException)
+            {
+                return false;
+            }
         }
 
 
@@ -174,6 +215,11 @@ namespace ThomasWeller.EasyAppVerif
         private void lblCrashDumpInfo_Click(object sender, EventArgs e)
         {
             Process.Start("https://docs.microsoft.com/en-us/windows/win32/wer/collecting-user-mode-dumps");
+        }
+
+        private void txtCrashDumps_TextChanged(object sender, EventArgs e)
+        {
+            txtCrashDumps.ForeColor = SystemColors.WindowText;
         }
     }
 }

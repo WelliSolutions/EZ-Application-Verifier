@@ -165,6 +165,7 @@ namespace ThomasWeller.EasyAppVerif
             this.txtCrashDumps.Size = new System.Drawing.Size(157, 20);
             this.txtCrashDumps.TabIndex = 6;
             this.txtCrashDumps.Text = "d:\\debug\\dumps";
+            this.txtCrashDumps.TextChanged += new System.EventHandler(this.txtCrashDumps_TextChanged);
             // 
             // btnBrowseCrashDump
             // 
