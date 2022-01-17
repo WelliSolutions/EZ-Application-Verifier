@@ -67,7 +67,6 @@ namespace ThomasWeller.EasyAppVerif
             {
                 AskMultiCheck();
             }
-            Debug.WriteLine(_itemsCheckedSinceLastTick);
         }
 
         private int _itemsCheckedSinceLastTick;
@@ -114,18 +113,24 @@ namespace ThomasWeller.EasyAppVerif
 
         private void btnAppVerif_Click(object sender, EventArgs e)
         {
+            ProcessCheckedList(item => new ApplicationVerifierDefault(item).Enable(), item => new ApplicationVerifierDefault(item).Disable());
+            ProcessCheckedList(item => new LocalDumps(item, txtCrashDumps.Text).Enable(), item => new LocalDumps(item, txtCrashDumps.Text).Disable());
+        }
 
 
+        private void ProcessCheckedList(Action<string> enable, Action<string> disable)
+        {
             for (var index = 0; index < chkExes.Items.Count; index++)
             {
                 string item = (string)chkExes.Items[index];
                 if (chkExes.GetItemCheckState(index) == CheckState.Checked)
                 {
-                    new ApplicationVerifierDefault(item).Enable();
+                    enable(item);
                 }
+
                 if (chkExes.GetItemCheckState(index) == CheckState.Unchecked)
                 {
-                    new ApplicationVerifierDefault(item).Disable();
+                    disable(item);
                 }
             }
         }
@@ -137,11 +142,16 @@ namespace ThomasWeller.EasyAppVerif
 
         private void btnBrowse_Click(object sender, EventArgs e)
         {
-            dirSelect.InitialDirectory = txtDirectory.Text;
+            SelectDirectory(txtDirectory);
+        }
+
+        private void SelectDirectory(TextBox textBox)
+        {
+            dirSelect.InitialDirectory = textBox.Text;
             var answer = dirSelect.ShowDialog(this);
             if (answer == DialogResult.OK)
             {
-                txtDirectory.Text = new FileInfo(dirSelect.FileName).DirectoryName;
+                textBox.Text = new FileInfo(dirSelect.FileName).DirectoryName;
             }
         }
 
@@ -154,6 +164,16 @@ namespace ThomasWeller.EasyAppVerif
         {
             target.Location = source.Location;
             target.Size = source.Size;
+        }
+
+        private void btnBrowseCrashDump_Click(object sender, EventArgs e)
+        {
+            SelectDirectory(txtCrashDumps);
+        }
+
+        private void lblCrashDumpInfo_Click(object sender, EventArgs e)
+        {
+            Process.Start("https://docs.microsoft.com/en-us/windows/win32/wer/collecting-user-mode-dumps");
         }
     }
 }
